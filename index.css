@@ -1,0 +1,123 @@
+@import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
+
+:root {
+  font-family: 'Vazirmatn', sans-serif;
+  color: #153125;
+  background: #082418;
+  font-synthesis: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  direction: rtl;
+  background: #082418;
+}
+
+body {
+  min-width: 320px;
+  min-height: 100vh;
+  margin: 0;
+  background: #082418;
+}
+
+button,
+textarea,
+input {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+button:disabled {
+  cursor: not-allowed;
+}
+
+button:focus-visible,
+textarea:focus-visible,
+input:focus-visible,
+a:focus-visible {
+  outline: 3px solid rgba(132, 223, 135, 0.6);
+  outline-offset: 3px;
+}
+
+::selection {
+  background: #c7f6aa;
+  color: #123321;
+}
+
+.app-shell {
+  isolation: isolate;
+  background-image:
+    radial-gradient(circle at 72% 8%, rgba(118, 224, 121, 0.13), transparent 26rem),
+    linear-gradient(135deg, #082418 0%, #0c3020 48%, #071b12 100%);
+}
+
+.app-glow {
+  position: fixed;
+  z-index: 0;
+  pointer-events: none;
+  border-radius: 999px;
+  filter: blur(28px);
+  opacity: 0.5;
+}
+
+.app-glow-one {
+  top: 12%;
+  right: 8%;
+  width: 13rem;
+  height: 13rem;
+  background: rgba(96, 207, 118, 0.27);
+}
+
+.app-glow-two {
+  bottom: 4%;
+  left: 16%;
+  width: 18rem;
+  height: 18rem;
+  background: rgba(190, 255, 129, 0.12);
+}
+
+.welcome-panel {
+  background:
+    radial-gradient(circle at 92% 12%, rgba(186, 241, 142, 0.62), transparent 10rem),
+    linear-gradient(135deg, #eff9eb 0%, #f9fcf6 72%);
+}
+
+.claude-welcome {
+  background:
+    radial-gradient(circle at 92% 14%, rgba(248, 197, 151, 0.38), transparent 11rem),
+    linear-gradient(135deg, #faf6f0 0%, #fffdfa 72%);
+}
+
+iframe {
+  display: block;
+  border: 0;
+}
+
+textarea::-webkit-scrollbar,
+.overflow-y-auto::-webkit-scrollbar,
+pre::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+textarea::-webkit-scrollbar-thumb,
+.overflow-y-auto::-webkit-scrollbar-thumb,
+pre::-webkit-scrollbar-thumb {
+  border: 2px solid transparent;
+  border-radius: 999px;
+  background: #bfd2c1;
+  background-clip: padding-box;
+}
+
+@media (max-width: 1279px) {
+  .app-glow {
+    display: none;
+  }
+}
